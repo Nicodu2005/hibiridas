@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:expressions/expressions.dart';
 
 void main() {
-  runApp(calculadoraApp());
+  runApp(CalculadoraApp());
 }
 
-class calculadoraApp extends StatelessWidget {
+class CalculadoraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Calculadora', home: calculadoraHomePage());
+    return MaterialApp(title: 'Calculadora', home:  CalculadoraHomePage());
   }
 }
 
-class calculadoraHomePage extends StatefulWidget {
+class CalculadoraHomePage extends StatefulWidget {
   @override
-  _calculadoraHomePageState createState() => _calculadoraHomePageState();
+  _CalculadoraHomePageState createState() => _CalculadoraHomePageState();
 }
 
-class _calculadoraHomePageState extends State<calculadoraHomePage> {
+class _CalculadoraHomePageState extends State<CalculadoraHomePage> {
   String resultado = "0";
   String input = "";
 
@@ -36,43 +36,42 @@ class _calculadoraHomePageState extends State<calculadoraHomePage> {
               style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
           ),
- Row(
-    children: <Widget>[
-      crearBoton("7"),
-      crearBoton("8"),
-      crearBoton("9"),
-      crearBoton("/"),
-    ],
-  ),
-  Row(
-    children: <Widget>[
-      crearBoton("4"),
-      crearBoton("5"),
-      crearBoton("6"),
-      crearBoton("*"),
-  ],
-),
- Row(
-    children: <Widget>[
-      crearBoton("1"),
-      crearBoton("2"),
-      crearBoton("3"),
-      crearBoton("-"),
+Row(
+  children: <Widget>[
+    crearBoton("7"),
+    crearBoton("8"),
+    crearBoton("9"),
+    crearBoton("/"),
   ],
 ),
 Row(
-    children: <Widget>[
-      crearBoton("."),
-      crearBoton("0"),
-      crearBoton("C"),
-      crearBoton("+"),
+  children: <Widget>[
+    crearBoton("4"),
+    crearBoton("5"),
+    crearBoton("6"),
+    crearBoton("*"),
   ],
 ),
- Row(
-    children:<Widget>[
-      crearBoton("="),
-    
+Row(
+  children: <Widget>[
+    crearBoton("1"),
+    crearBoton("2"),
+    crearBoton("3"),
+    crearBoton("-"),
   ],
+),
+Row(
+  children: <Widget>[
+    crearBoton("."),
+    crearBoton("0"),
+    crearBoton("C"),
+    crearBoton("+"),
+  ],
+),
+Row(
+  children: <Widget>[
+    crearBoton("="),
+  ],  
 ),
         ],
       )
@@ -93,7 +92,7 @@ Widget crearBoton(String texto){
 void botonPresionado(String texto){
   setState((){
     if(texto=="C"){
-      resultado =="0";
+      resultado ="0";
       input="";
     }else if(texto=="="){
       try{
